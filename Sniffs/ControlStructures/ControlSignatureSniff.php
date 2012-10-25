@@ -81,21 +81,18 @@ class Joomla_Sniffs_ControlStructures_ControlSignatureSniff extends PHP_CodeSnif
 	 * @return return_type
 	 */
 	protected function processPattern($patternInfo, PHP_CodeSniffer_File $phpcsFile
-	, $stackPtr)
+		, $stackPtr)
 	{
-		if(0)
+		/*
+		 * NOTE: This is a special sniff for the Joomla! CMS to exclude
+		 * the tmpl folder which may contain constructs in colon notation
+		 */
+
+		$parts = explode(DIRECTORY_SEPARATOR, $phpcsFile->getFileName());
+
+		if('tmpl' == $parts[count($parts) - 2])
 		{
-			/*
-			 * @todo disabled - This is a special sniff for the Joomla! CMS to exclude
-			* the tmpl folder which may contain constructs in colon notation
-			*/
-
-			$parts = explode(DIRECTORY_SEPARATOR, $phpcsFile->getFileName());
-
-			if('tmpl' == $parts[count($parts) - 2])
-			{
-				return false;
-			}
+			return false;
 		}
 
 		return parent::processPattern($patternInfo, $phpcsFile, $stackPtr);
