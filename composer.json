@@ -1,0 +1,14 @@
+{
+    "name": "elkuku/joomla-coding-standards",
+    "description": "Joomla Coding Standards Definition. - tweaked by elkuku.",
+    "keywords": [ "joomla" ],
+    "type": "library",
+    "minimum-stability": "dev",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "The Joomla! Project",
+            "homepage": "http://joomla.org"
+        },
+    ]
+}
